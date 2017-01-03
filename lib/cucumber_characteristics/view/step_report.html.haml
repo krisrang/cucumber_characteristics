@@ -10,11 +10,6 @@
     %link{:href => "https://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css", :rel => "stylesheet"}/
     / Custom styles for this layout
     :css
-      body {
-        min-height: 2000px;
-        padding-top: 70px;
-      }
-
       td {
         white-space: nowrap;
       }
@@ -138,7 +133,7 @@
                   %div.modal-header
                     %h4 #{feature}
                   %div.modal-body
-                    %table.table.table-striped.table-bordered.table-condensed{:id => feature.split('/').last.gsub(/[\.:]/, '_') }
+                    %table.table.table-striped.table-bordered.table-condensed.tablesorter{:id => feature.split('/').last.gsub(/[\.:]/, '_') }
                       %thead
                         %tr
                           %th Example
@@ -183,6 +178,6 @@
       {
           $("#profile_table").tablesorter( {sortList: [[1,1],[3,1]], widgets: ['zebra']} );
           $("#feature_table").tablesorter( {sortList: [[3,0],[1,1]], widgets: ['zebra']} );
-          $("#unmatched_steps_table").tablesorter( {sortList: [[1,0]], widgets: ['zebra']} );
+          $("#unmatched_steps_table").tablesorter( {sortList: [[0,0]], widgets: ['zebra']} );
       }
       );
